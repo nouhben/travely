@@ -37,6 +37,7 @@ class OboardingScreen extends StatelessWidget {
         children: [
           Container(
             height: MediaQuery.of(context).size.height * .6,
+            width: 200,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -85,11 +86,8 @@ class OboardingScreen extends StatelessWidget {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueAccent,
-                      elevation: 3.0,
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 16.0,
-                        horizontal: 16.0,
-                      ),
+                      elevation: 4.0,
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
                     ),
                     child: Text(
                       'Get Started',
