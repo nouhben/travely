@@ -34,58 +34,62 @@ class OboardingScreen extends StatelessWidget {
       extendBody: true,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'assets/images/onboarding.jpg',
-            fit: BoxFit.cover,
-            height: MediaQuery.of(context).size.height * 0.6,
-          ),
-          const SizedBox(height: 32.0),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'Explore your journey with us',
-              maxLines: 2,
-              softWrap: true,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.fade,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge!
-                  .copyWith(color: Colors.black, fontSize: 36),
+          Container(
+            height: MediaQuery.of(context).size.height * .6,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/images/onboarding.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.all(
+                Radius.circular(32.0),
+              ),
             ),
           ),
-          const SizedBox(height: 32.0),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(
-              'All your vacations distinations are here. Enjoy your holiday.',
-              maxLines: 3,
-              softWrap: true,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.fade,
-              style: Theme.of(context)
-                  .textTheme
-                  .displaySmall!
-                  .copyWith(color: Colors.black, fontSize: 16),
-            ),
-          ),
-          const SizedBox(height: 32.0),
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(
+                const SizedBox(height: 32.0),
+                Text(
+                  'Explore your journey \nonly with us',
+                  maxLines: 2,
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.fade,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineLarge!
+                      .copyWith(color: Colors.black, fontSize: 36),
+                ),
+                const SizedBox(height: 32.0),
+                Text(
+                  'All your vacations distinations are here. Enjoy your holiday.',
+                  maxLines: 3,
+                  softWrap: true,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.fade,
+                  style: Theme.of(context)
+                      .textTheme
+                      .displaySmall!
+                      .copyWith(color: Colors.black, fontSize: 16),
+                ),
+                const SizedBox(height: 32.0),
+                SizedBox(
+                  width: double.maxFinite,
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueAccent,
                       elevation: 3.0,
-                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16.0,
+                        horizontal: 16.0,
+                      ),
                     ),
                     child: Text(
                       'Get Started',
