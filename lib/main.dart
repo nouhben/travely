@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'utils/constants.dart';
 
@@ -14,7 +15,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: themeData,
+      theme: themeData.copyWith(
+        textTheme: GoogleFonts.mulishTextTheme(Theme.of(context).textTheme),
+      ),
       debugShowCheckedModeBanner: false,
       home: const OboardingScreen(),
     );
@@ -33,17 +36,10 @@ class OboardingScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
+          Image.asset(
+            'assets/images/onboarding.jpg',
+            fit: BoxFit.cover,
             height: MediaQuery.of(context).size.height * 0.6,
-            width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              backgroundBlendMode: BlendMode.overlay,
-              image: DecorationImage(
-                image: AssetImage('assets/images/onboarding.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
           ),
           const SizedBox(height: 32.0),
           Padding(
